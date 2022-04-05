@@ -2,6 +2,9 @@ Vue.component('matrix', {
   props: ['color', 'nextClick', 'pixels'],
   methods: {
     mouseenter: function(evt){
+      if(+new Date() / 1000 < this.nextClick){
+        return;
+      }      
       evt.path[0].style.backgroundColor = this.color;
     },
     mouseleave: function(evt, element){

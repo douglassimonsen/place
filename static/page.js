@@ -5,21 +5,20 @@ const app = new Vue({
       pixels: [[]],
       color: "#aa0000",
       lastClicked: null,
+      lastServerUpdate: null,
       secondsBetweenClicks: 10,
       username: '',
     };
   },
   created: function() {
+    this.checkForUpdates();
     const timer = setInterval(() => {
       this.checkForUpdates();
-    }, 1000);
+    }, 333);
   
     this.$once("hook:beforeDestroy", () => {
       clearInterval(timer);
     });
-  },
-  mounted: function(){
-    this.checkForUpdates();
   },
   computed: {
     nextClick: function(){
@@ -31,9 +30,16 @@ const app = new Vue({
   },
   methods: {
     checkForUpdates: function(){
-      axios.post('/grid/load').then(function(response){
-        this.pixels = response.data;
-      }.bind(this))
+      axios.post('/grid/needs_update', {'lastServerUpdate': this.lastServerUpdate}).then(function(response){
+        if(!response.data){ // no update needed, helps with performance
+          return;
+        }
+        axios.post('/grid/load').then(function(response){
+          this.lastServerUpdate = response.data.lastServerUpdate
+          this.pixels = response.data.pixels;
+        }.bind(this))
+      }.bind(this));
+
     },
     logChange: function(obj){
       obj.username = this.username;

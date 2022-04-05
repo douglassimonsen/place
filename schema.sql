@@ -6,7 +6,7 @@ create table place.history (
 	row int,
 	col int,
 	color text,
-	insert_dt timestamp
+	insert_dt timestamp default current_timestamp
 );
 create table place.grid (
   username text,
