@@ -5,13 +5,15 @@
     <script defer src="{{url_for('static', filename='dependencies/vue.js')}}"></script>
     <script defer src="{{url_for('static', filename='components/colorPicker.js')}}"></script>
     <script defer src="{{url_for('static', filename='components/matrix.js')}}"></script>
+    <script defer src="{{url_for('static', filename='components/timer.js')}}"></script>
     <script defer src="{{url_for('static', filename='page.js')}}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='page.css') }}">
 
   </head>
   <body>
     <div id="page">
-      <matrix :color="color"></matrix>
+      <matrix :color="color" :next-click="nextClick" @update="logChange"></matrix>
+      <timer :last-clicked="lastClicked" :seconds-between-clicks="secondsBetweenClicks"></timer>
       <color-picker v-model="color"></color-picker>
       <div v-text="color"></div>
     </div>
