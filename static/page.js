@@ -6,7 +6,7 @@ const app = new Vue({
       color: "#aa0000",
       lastClicked: null,
       lastServerUpdate: null,
-      secondsBetweenClicks: 10,
+      secondsBetweenClicks: 2,
       username: '',
     };
   },
@@ -19,6 +19,7 @@ const app = new Vue({
     this.$once("hook:beforeDestroy", () => {
       clearInterval(timer);
     });
+    this.username = JSON.parse(document.cookie).username;
   },
   computed: {
     nextClick: function(){
@@ -56,6 +57,7 @@ const app = new Vue({
     },
     checkLength: function(){
       this.username = this.username.slice(0, 40);
+      document.cookie = JSON.stringify({username: this.username});
     }
   },
 });

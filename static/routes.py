@@ -26,7 +26,7 @@ def get_needs_update():
 
 @app.app.route('/grid/load', methods=['POST'])
 def get_grid():
-    grid = [[None for _ in range(10)] for _ in range(10)]
+    grid = [[None for _ in range(100)] for _ in range(100)]
     with app.get_conn() as conn:
         cursor = conn.cursor()
         cursor.execute('select * from place.grid')

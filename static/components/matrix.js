@@ -8,7 +8,7 @@ Vue.component('matrix', {
       evt.path[0].style.backgroundColor = this.color;
     },
     mouseleave: function(evt, element){
-      evt.path[0].style.backgroundColor = element;
+      evt.path[0].style.backgroundColor = element?.color || null;
     },
     addColor: function(i, j){
       if(+new Date() / 1000 < this.nextClick){
