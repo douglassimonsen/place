@@ -1,9 +1,9 @@
-new Vue({
+const app = new Vue({
   el: '#page',
   data: function(){
     return {
       pixels: [[]],
-      selectedColor: null,
+      color: "#aa0000",
     };
   },
 });

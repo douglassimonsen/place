@@ -4,13 +4,16 @@
     
     <script defer src="{{url_for('static', filename='dependencies/vue.js')}}"></script>
     <script defer src="{{url_for('static', filename='components/colorPicker.js')}}"></script>
+    <script defer src="{{url_for('static', filename='components/matrix.js')}}"></script>
     <script defer src="{{url_for('static', filename='page.js')}}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='page.css') }}">
 
   </head>
   <body>
     <div id="page">
-      <color-picker v-model="selectedColor"></color-picker>
+      <matrix :color="color"></matrix>
+      <color-picker v-model="color"></color-picker>
+      <div v-text="color"></div>
     </div>
   </body>
 </html>

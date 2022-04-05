@@ -19,3 +19,9 @@
   display: grid;
   grid-auto-flow: column;
 }
+.matrixSquare {
+  width: 5px;
+  height: 5px;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+}

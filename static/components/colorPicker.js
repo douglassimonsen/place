@@ -7,7 +7,8 @@ Vue.component('colorPicker', {
   },
   methods: {
     selectColor(colorOpt){
-      this.$emit('value', colorOpt[1]);
+      console.log(colorOpt[1]);
+      this.$emit('input', colorOpt[1]);
     },
   },
   template: `
