@@ -1,0 +1,21 @@
+.colorSquare {
+  height: 40px;
+  width: 40px;
+  background-color: aquamarine;
+  border: 1px solid;
+}
+.colorSquare:hover {
+  opacity: 0.8;
+}
+.colorSquareContainer {
+  border: 1px solid;
+  width: fit-content;
+  padding: 5px;
+  text-align: center;
+}
+.colorPicker {
+  margin: auto;
+  width: fit-content;
+  display: grid;
+  grid-auto-flow: column;
+}

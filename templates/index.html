@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Offbrand Place</title>
+    
+    <script defer src="{{url_for('static', filename='dependencies/vue.js')}}"></script>
+    <script defer src="{{url_for('static', filename='components/colorPicker.js')}}"></script>
+    <script defer src="{{url_for('static', filename='page.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='page.css') }}">
+
+  </head>
+  <body>
+    <div id="page">
+      <color-picker v-model="selectedColor"></color-picker>
+    </div>
+  </body>
+</html>
