@@ -2,6 +2,7 @@
   <head>
     <title>Offbrand Place</title>
     
+    <script defer src="{{url_for('static', filename='dependencies/axios.js')}}"></script>
     <script defer src="{{url_for('static', filename='dependencies/vue.js')}}"></script>
     <script defer src="{{url_for('static', filename='components/colorPicker.js')}}"></script>
     <script defer src="{{url_for('static', filename='components/matrix.js')}}"></script>
@@ -12,7 +13,7 @@
   </head>
   <body>
     <div id="page">
-      <matrix :color="color" :next-click="nextClick" @update="logChange"></matrix>
+      <matrix :color="color" :next-click="nextClick" @update="logChange" :pixels="pixels"></matrix>
       <timer :last-clicked="lastClicked" :seconds-between-clicks="secondsBetweenClicks"></timer>
       <color-picker v-model="color"></color-picker>
       <div v-text="color"></div>
