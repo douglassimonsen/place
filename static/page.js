@@ -21,5 +21,8 @@ const app = new Vue({
     logChange: function(obj){
       this.lastClicked = obj.timestamp;
     },
+    checkLength: function(){
+      this.username = this.username.slice(0, 40);
+    }
   },
 });

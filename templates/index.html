@@ -18,7 +18,7 @@
       <div v-text="color"></div>
       <div class="usernameContainer">
         <div>Username</div>
-        <input v-model="username"/>
+        <input v-model="username" @input="checkLength"/>
       </div>
     </div>
   </body>
