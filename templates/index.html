@@ -16,6 +16,10 @@
       <timer :last-clicked="lastClicked" :seconds-between-clicks="secondsBetweenClicks"></timer>
       <color-picker v-model="color"></color-picker>
       <div v-text="color"></div>
+      <div class="usernameContainer">
+        <div>Username</div>
+        <input v-model="username"/>
+      </div>
     </div>
   </body>
 </html>

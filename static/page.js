@@ -6,6 +6,7 @@ const app = new Vue({
       color: "#aa0000",
       lastClicked: null,
       secondsBetweenClicks: 10,
+      username: '',
     };
   },
   computed: {

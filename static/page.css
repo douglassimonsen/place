@@ -20,8 +20,16 @@
   grid-auto-flow: column;
 }
 .matrixSquare {
-  width: 5px;
-  height: 5px;
+  width: 1rem;
+  height: 1rem;
   border: 1px solid #aaa;
   box-sizing: border-box;
+}
+.usernameContainer {
+  position: absolute;
+  top: -1;
+  right: -1;
+  border: 1px solid;
+  padding: 8px 8px 5px 5px;
+  border-radius: 0 0 0 8px;
 }
