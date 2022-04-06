@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='page.css') }}">
 
   </head>
-  <body>
+  <body style="background-color: #eee;">
     <div id="page">
       <matrix :color="color" :next-click="nextClick" @update="logChange" :pixels="pixels"></matrix>
       <timer :last-clicked="lastClicked" :seconds-between-clicks="secondsBetweenClicks"></timer>
